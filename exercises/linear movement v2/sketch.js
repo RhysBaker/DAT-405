@@ -26,8 +26,8 @@ function draw() {
 
   ellipse(x, y, size, size);
 
-  x = x + 15;
-  y = y + 15;
+  x += 15;
+  y += 15;
 
   // Reset to the bottom
   if (x > width && y > height) {
