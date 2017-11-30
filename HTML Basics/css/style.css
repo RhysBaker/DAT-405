@@ -1,0 +1,25 @@
+
+header {
+  background-color: red;
+  padding: 5%;
+}
+fgfg
+h2 {
+  text-decoration: underline;
+  border-style: solid;
+  padding:1%;
+
+}
+
+h3 {
+  color: red;
+  border-style: solid;
+  border-color: black;
+  padding:1%;
+  text-decoration: underline;
+}
+
+footer {
+  background-color: blue;
+  padding: 8%;
+}
