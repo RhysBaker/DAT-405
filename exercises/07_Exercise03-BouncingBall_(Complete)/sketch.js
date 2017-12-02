@@ -1,57 +1,59 @@
-//https://github.com/stavrosdidakis/DAT-GAD-405_2017
-//https://p5js.org
-
-//DAT405 / GAD405
-//07_Bouncing Ball Exercise (Template)
-//For this exercise make sure that the ellipse does not
-//appear from the other side, but rather bounds back from the edges
-//When it bounces back, it also changes a random color
-
-//Setup of variables
-let x;
 let y;
 let speedX;
 let speedY;
+let r;
+let g;
+let b;
 
 function setup(){
   createCanvas(400, 400);
   x = width/2;
   y = height/2;
-  //Randomize speedX and SpeedY
-  //Positive means the ellipse moves forward,
-  //and negative it moves backwards
   speedX = random(-5., 1);
   speedY = random(-5., 1);
+  r = random(255);
+  g = random(255);
+  b = random(255);
 }
 
 function draw(){
   background(100);
 
-  //For a new frame accumulate a new value to x and y
-  //based on the random speedX and speedY
+
   x += speedX;
   y += speedY;
 
-  //If ellipse goes off screen (right side of canvas),
-  //then reset position to 0 (aappears from the left)
+
   if (x>375) {
     speedX = -speedX;
+    r = random(255);
+    g = random(255);
+    b = random(255);
   }
-  //If ellipse goes off screen (left side of canvas),
-  //then reset position to 400 (appears from the right)
+
+
   if (x<25) {
     speedX = -speedX;
+    r = random(255);
+    g = random(255);
+    b = random(255);
   }
-    //Same applies here, but for the y coordinates
+
 
   if (y>375) {
   speedY = -speedY;
+  r = random(255);
+  g = random(255);
+  b = random(255);
   }
 
   if (y<25) {
   speedY = -speedY;
+  r = random(255);
+  g = random(255);
+  b = random(255);
   }
 
-  fill(255, 0, 0);
+  fill(r,g,b);
   ellipse(x, y, 50, 50);
 }
