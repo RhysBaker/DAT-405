@@ -1,41 +1,20 @@
 //Create two variables that will store the new objects from the class Circle
 let circleArray = [];
 let arraySize = 100;
-var rSlider, gSlider, bSlider;
-
 
 function setup() {
-  createCanvas(450, 450);
-  rSlider = createSlider(0, 255, 255);
-  rSlider.position(200, 100);
-  gSlider = createSlider(0, 255, 255);
-  gSlider.position(200, 130);
-  bSlider = createSlider(0, 255, 255);
-  bSlider.position(200  , 160);
+  createCanvas(500, 500);
   for (let i=0; i<arraySize; i++){
-    circleArray[i] = new Circle;
+    circleArray[i] = new Circle(width/2, height/2, random(-1, 1), random(-1, 1), random(2, 2));
   }
 }
 
-
 function draw() {
-  var r = rSlider.value();
-  var g = gSlider.value();
-  var b = bSlider.value();
-  text("red", rSlider.x * 2 + rSlider.width, 35);
-  text("green", gSlider.x * 2 + gSlider.width, 65);
-  text("blue", bSlider.x * 2 + bSlider.width, 95);
-  background(r,g,b);
+  background(160);
   for (let i=0; i<circleArray.length; i++){
     circleArray[i].moveFunction();
     circleArray[i].displayCircle();
-
-    if (mouseIsPressed) {
-    for (let i=0; i<arraySize; i++){
-      circleArray[i] = new Circle(mouseX, mouseY, random(-1, 1), random(-1, 1), random(10, 15));
-    }
   }
-}
 }
 
 //Definition of the class Circle
@@ -52,7 +31,7 @@ class Circle{
     this.rd = random(255);
     this.grn = random(255);
     this.bl = random(255);
-    this.a = 100;
+    this.a = 255;
   }
 
   //Class function that takes care of motion and collision
@@ -63,10 +42,10 @@ class Circle{
 
     //Based on boundaries collision, reverse direction for x and y
     if (this.x > width || this.x<0){
-      //this.speedX *= -1;
+      this.speedX *= -1;
     }
     if (this.y > (height) || this.y<0){
-      //this.speedY *= -1;
+      this.speedY *= -1;
     }
   }
 
