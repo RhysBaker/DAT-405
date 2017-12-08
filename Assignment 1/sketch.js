@@ -32,7 +32,7 @@ function draw() {
 
     if (mouseIsPressed) {
     for (let i=0; i<arraySize; i++){
-      circleArray[i] = new Circle(mouseX, mouseY, random(-1, 1), random(-1, 1), random(10, 15));
+      circleArray[i] = new Circle(mouseX, mouseY, random(-1, 1), random(-1, 1), random(1, 25));
     }
   }
 }
@@ -63,10 +63,10 @@ class Circle{
 
     //Based on boundaries collision, reverse direction for x and y
     if (this.x > width || this.x<0){
-      //this.speedX *= -1;
+      this.speedX *= -1;
     }
     if (this.y > (height) || this.y<0){
-      //this.speedY *= -1;
+      this.speedY *= -1;
     }
   }
 
