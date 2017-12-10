@@ -13,7 +13,8 @@ h1 {
 
 
 #canvasContainer{
-  margin: 1%;
+  padding: .2%;
+  padding-left: 60%;
 }
 
 header {
